@@ -10,7 +10,7 @@ $sshKeyPublicKey = Get-Content "../id_rsa.pub"
 $publicIpAddressName = "linuxboxpip"
 $vmName = "matebox"
 $vmImage = "Ubuntu2204"
-$vmSize = "Standard_B2ats_v2"
+$vmSize = "Standard_B1s"
 $dnsLabel = "matetask97531"
 
 Write-Host "Creating a resource group $resourceGroupName ..."
@@ -48,7 +48,7 @@ $Params = @{
     ExtensionType      = 'CustomScript'
     TypeHandlerVersion = '2.1'
     Settings  = @{
-        fileUris = @('https://raw.githubusercontent.com/salabam/azure_task_12_deploy_app_with_vm_extention/develop/install-app.sh')
+        fileUris = @('https://raw.githubusercontent.com/salabam/azure_task_12_deploy_app_with_vm_extention/main/install-app.sh')
         commandToExecute = './install-app.sh'
     }
 }
